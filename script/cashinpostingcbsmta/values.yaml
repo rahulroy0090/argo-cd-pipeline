@@ -1,0 +1,43 @@
+namespace: esb-p2mpay-user-management-services
+replicaCount: 1
+
+image:
+  repository: registry.preprod.finopaymentbank.in/p2mpay/cashinpostingcbsmta
+  tag: "1234567890"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets:
+  - name: regsecret
+
+serviceAccountName: default
+
+configMapName: cashinpostingcbsmta
+
+containerPort: 8080
+
+annotations:
+  sidecar.istio.io/inject: "true"
+  sidecar.jaegertracing.io/inject: "true"
+
+nodeSelector:
+  app: esb-p2mpay-user-management-services
+
+resources: {}
+
+serviceAccount:
+  create: true # Set to true to create the ServiceAccount
+  name: cashinpostingcbsmta # Custom name for the ServiceAccount
+
+service:
+  name: cashinpostingcbsmta
+  port: 8080
+  targetPort: 8080
+  protocol: TCP
+  type: ClusterIP
+  selector:
+    app: cashinpostingcbsmta
+
+configMap:
+  name: cashinpostingcbsmta
+  data:
+    

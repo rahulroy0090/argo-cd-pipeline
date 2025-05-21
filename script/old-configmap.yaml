@@ -1,0 +1,29 @@
+QUARKUS_LOG_CATEGORY__IO_QUARKUS_OPENTELEMETRY_RUNTIME_QUARKUSCONTEXTSTORAGE__LEVEL: ERROR
+QUARKUS_MICROMETER_EXPORT_PROMETHEUS_PATH: /status/metrics
+QUARKUS_SMALLRYE_HEALTH_LIVENESS_PATH: /status/live
+QUARKUS_SMALLRYE_HEALTH_READINESS_PATH: /status/ready
+QUARKUS_SMALLRYE_HEALTH_ROOT_PATH: /status/health
+TZ: Asia/Kolkata
+camel.context.name: Quarkus_UPIUpdateGL_PTAPlus
+camel.health.enabled: "true"
+camel.health.registry-enabled: "true"
+camel.health.routes-enabled: "true"
+camel.main.routes-include-pattern: routes/camel-route.xml
+com_finobank_Quarkus_UPIUpdateGL_PTAPlus_helper_EsbGLUpdate_mp-rest_url: http://10.15.15.247:81/api/updateGlAccount
+currentSetUp: UAT
+esbHost: Quarkus_UPIUpdateGL_PTAPlus
+quarkus.application.name: Quarkus_UPIUpdateGL_PTAPlus
+quarkus.camel.health.enabled: "true"
+quarkus.camel.openapi.expose.enabled: "true"
+quarkus.datasource.jdbc.telemetry: "true"
+quarkus.http.access-log.log-directory: /tmp
+quarkus.log.console.format: '%d{YYYY-MM-dd :HH:mm:ss.SSS} %-5p traceId=%X{traceId},parentId=%X{parentId}, spanId=%X{spanId}, sampled=%X{sampled} [%c{2.}] (%t) %s%e%n'
+quarkus.log.file.enable: "true"
+quarkus.log.file.path: /tmp/Quarkus_UPIUpdateGL_PTAPlus.log
+quarkus.native.resources.includes: routes/*.xml
+quarkus.opentelemetry.enabled: "true"
+quarkus.otel.exporter.otlp.traces.endpoint: http://jaeger-collector.istio-system.svc.cluster.local:4317
+quarkus.smallrye-openapi.path: /Quarkus_UPIUpdateGL_PTAPlus-openapi
+quarkus.swagger-ui.always-include: "true"
+quarkus.swagger-ui.path: /Quarkus_UPIUpdateGL_PTAPlus-swagger
+
