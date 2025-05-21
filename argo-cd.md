@@ -99,6 +99,13 @@ oc -n argocd get secret argocd-cluster -o jsonpath="{.data.admin\.password}" | b
 
 ---
 
+```
+oc extract secret/argocd-cluster --to=-
+# admin.password
+kJz6uHNqx3han80eAgsTOLtBMmDRSCI9
+
+```
+
 
 
 
